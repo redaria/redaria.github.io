@@ -1,0 +1,512 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });Z
+});
+</script>
+<head> 
+	<title>grace | portfolio</title>
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9"> 
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	
+	<!--[if lt IE 9 ]><link rel="stylesheet" href="./css/720_grid.css" type="text/css"><![endif]-->
+   	<link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="./css/720_grid.css" type="text/css" media="screen and (min-width: 720px)">
+	<link rel="stylesheet" href="./css/986_grid.css" type="text/css" media="screen and (min-width: 986px)">
+	<link rel="stylesheet" href="./css/1236_grid.css" media="screen and (min-width: 1236px)" >
+    <link rel="stylesheet" href="./css/base.css" type="text/css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link href='fonts/miso.otf' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/slidebars.css">
+	<script src="js/isotope.pkgd.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>]
+
+</head>
+
+<body>
+<!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+ 
+<div class="sb-slidebar sb-left sb-width-thin">
+			<div><center><img src="images/logo.png" height="55"><hr></center></div>
+            <h3 class="sb-close"><a href="#home">home</a></h3>
+            <h3 class="sb-close"><a href="#about">about</a></h3>
+            <h3 class="sb-close"><a href="#portfolio">portfolio</a></h3>
+            <h3 class="sb-close"><a href="#contact">contact</a></h3>
+			<h3 class="sb-close"><a href="TOMB/tomb.html">secret TOMB tribute</a></h3>
+		</div>
+		
+<div id="sb-site"> 
+	<div id="home"></div>
+    <div class="banner-wrap">
+        <div class="grid">
+        	<div class="row">
+            <div class="slot-0"><h3><a href="#home">home</a></h3></div>
+            <div class="slot-1"><h3><a href="#about">about</a></h3></div>
+            <div class="slot-2-3"><a href="#home"><img src="images/logo.png" height="55"></a></div>
+            <div class="slot-4"><h3><a href="#portfolio">portfolio</a></h3></div>
+            <div class="slot-5"><h3><a href="#contact">contact</a></h3></div>
+            </div>
+        </div>
+    </div>
+	<div class="intro" width="100%">
+		<div class="sb-open-left" align="left"><font color="#75a798"><i class="fa fa-bars"></i></font></div>
+	</div>
+
+<div class="grid">
+	<div class="row" id="about">
+			<div class="slot-0-1"><p> </p></div>
+			<div class="slot-2-3 feature" id="indentTop">
+	            <br><br><br>
+	            <center><img src="images/mee.png"/>
+				<h1>Grace Guo</h1>
+	            <h3>Student</h3></center>
+			</div>
+            <div class="slot-4-5"><p> </p></div>
+	</div>
+	<div class="row">
+			<div class="slot-6"><p> </p></div>
+			<div class="slot-7-8 feature">
+	            <center><p><b><i>Hi there,</i></b> I'm currently a student at the University of Toronto studying towards a specialist degree in computer science, and a minor in economics. I graduated from Don Mills Collegiate Institute and its 6-year CyberARTS program. Over these past 6 years I've created a whole lot of <i>things</i> regarding <b>art and design</b>, and of those whole lot, here shown are some of (what I think are) my <b>best</b> works. They range from digital design to digital painting to print to traditional art and beyond! <br>Of the themes and ideas I often take inspiration from, games and food are a huge part of that. To be able to work in the <b>gaming industry</b> is my long term goal. And although tea isn't very much of an influence on my work, I feel it is important enough in my life to be mentioned here as well <br>乁༼☯‿☯✿༽ㄏ </p></center>
+			</div>
+            <div class="slot-9 feature"></div>
+	</div>	
+    
+    <hr>
+ 
+<div class="row" id="portfolio">
+      <div class="slot-0-1"><p> </p></div>
+      <div class="slot-2-3 feature" id="indentTop">
+              <br><br><br>
+              <center>
+        <h1>Portfolio</h1>
+              <h3>See different mediums of work</h3></center>
+      </div>
+            <div class="slot-4-5"><p></p></div>
+  </div>
+ 
+
+<div id="container" data-page="filtering">
+    <div id="filtering-demo" class="demo">
+        <div class="row" id="indentTop">
+           <div id="filters" class="button-group js-radio-button-group slot-6-7-8">
+            <button class="button is-checked" data-filter="*">ALL</button>
+            <button class="button" data-filter=".dg">DIGITAL</button>
+            <button class="button" data-filter=".td">TRADITIONAL</button>
+            <button class="button" data-filter=".sb">SKETCHBOOK</button>
+          </div>
+            <div class="slot-9"><p></p></div>
+        </div>
+
+
+        <div class="row">
+           <div class="isotope slot-0-1-2-3-4-5">
+            
+                  
+              
+                  <div class="element-item td"><a href="images/bw_illustration (2).jpg" data-imagelightbox="d">
+                    <img src="images/thumbnails/art_illustration.png" alt="Sky Noodles Illustration <br> Dry Medium on Stonehenge (22in x 30in)"/></a>
+                  </div>
+                
+                  <div class="element-item td"><a href="images/superhero.jpg" data-imagelightbox="d">
+                   <img src="images/thumbnails/superhero.png" alt="Oq in the Dream World <br> Wet and Dry Medium on Illustration Board (16in x 20in)"/></a>
+                  </div>
+                
+                  <div class="element-item sb"><a href="images/sb_type.jpg" data-imagelightbox="d">
+                   <img src="images/thumbnails/sb_type.png" alt="Stars Fell on Alabama<br>Watercolour and Gel Pen on Card (5in x 4in)"/></a>
+                  </div>
+                
+                  <div class="element-item dg"><a href="images/packaging (2).jpg" data-imagelightbox="d">
+                    <img src="images/thumbnails/packaging.png" alt="Demons of Kartenhelm Razor Gaming Mouse Package <br> Illustrator and Photoshop (final 6in x 9in x 3in)"/></a>
+                  </div>
+                
+                  <div class="element-item td"><a href="images/printmaking (2).jpg" data-imagelightbox="d">
+                    <img src="images/thumbnails/printmaking.png" alt="Bullets <br>Printmaking Ink on Colour Stonehenge Paper (8in x 11in)"/></a>
+                  </div>
+                  <div class="element-item dg"><a href="images/brochure (3).jpg" data-imagelightbox="d">
+                    <img src="images/thumbnails/brochure.png" alt="CyberARTS Information Night Brochure <br>Illustrator (4 pentagons x 5in x 5in)"/></a>
+                  </div>
+                  <div class="element-item sb"><a href="images/sb_bugs.jpg" data-imagelightbox="d">
+                    <img src="images/thumbnails/sb_bugs.png" alt="Bug Collection<br>Crosshatching Pencil on Paper"/></a>
+                  </div>
+                  <div class="element-item dg"><a href="images/typography.jpg" data-imagelightbox="d">
+                    <img src="images/thumbnails/typography.png" alt="Art Styles <br> Graphic Typography Layout in Illustrator and Photoshop (printed 11in x 17in)"/></a>
+                  </div>
+                  <div class="element-item sb"><a href="images/sb_cards.jpg" data-imagelightbox="d">
+                    <img src="images/thumbnails/sb_cards.png" alt="Demon Cards<br>Dry Medium and Inks on Paper"/></a>
+                  </div>
+                  <div class="element-item dg"><a href="images/dragon.jpg" data-imagelightbox="d">
+                    <img src="images/thumbnails/dragon.png" alt="Spirit Reborn <br>Vector Illustration (printed 11in x 17in)"/></a>
+                  </div>
+                  <div class="element-item td"><a href="images/ginger.jpg" data-imagelightbox="d">
+                    <img src="images/thumbnails/ginger.png" alt="Unicorn Ginger <br>Pencil on Manila Paper (15in x 22in)"/></a>
+                  </div>
+                  <div class="element-item sb"><a href="images/sb_skull.jpg" data-imagelightbox="d">
+                    <img src="images/thumbnails/sb_skull.png" alt="Skullside<br>Watercolour on Watercolour Paper"/></a>
+                  </div>
+                  <div class="element-item td"><a href="images/stilllife.jpg" data-imagelightbox="d">
+                    <img src="images/thumbnails/stilllife.png" alt="Ghost of a Presence<br>Acrylic on Canvas (16in x 20in)"/></a>
+                  </div>
+                  <div class="element-item dg"><a href="images/micons2.jpg" data-imagelightbox="d">
+                    <img src="images/thumbnails/micons.png" alt="?<br>About Me Icons in Illustrator (12 icons x 5in x 5in)"/></a>
+                  </div>
+                  <div class="element-item sb"><a href="images/sb_sansotei.jpg" data-imagelightbox="d">
+                    <img src="images/thumbnails/sb_sansotei.png" alt="Sansotei Ramen<br>Fineliner on Manila Paper (6in x 4in)"/></a>
+                  </div>
+            </div>
+        </div>
+
+	</div> <!-- demo end-->
+</div> <!-- container end-->
+
+    <hr>
+    
+    
+    
+	<div class="row footer" id="contact">
+		<div class="slot-0-1-2 id="indentTop"">
+						<h2>Call me maybe?</h2>
+            <h4><a href="images/branding (1).jpg" data-imagelightbox="c">
+                  Check out my resume!</a>
+            </h4>
+        </div>
+        
+        <div class="slot-3-4-5">
+            <h5><i class="fa fa-home"></i> 51 Capella Starway, Toronto </h5>
+            <h5><i class="fa fa-phone"></i> +1 647 522 2580 </h5>
+            <h5><i class="fa fa-envelope"></i> graceeguo@gmail.com</h5>
+        </div>
+	</div>
+</div><!-- / .grid -->
+</div>
+
+<script src="js/slidebars.js"></script>
+		<script>
+			  (function($) {
+				$(document).ready(function() {
+				  $.slidebars({
+					siteClose: true, // true or false
+					disableOver: false, // integer or false
+					hideControlClasses: true, // true or false
+					scrollLock: false // true or false
+				  });
+				});
+			  }) (jQuery);
+		</script>
+        
+<script>window.jQuery || document.write('<script src="bower_components/jquery/jquery.min.js"><\/script>')</script>
+<script>
+	$( function() {
+  // init Isotope
+  var $container = $('.isotope').isotope({
+    itemSelector: '.element-item',
+    layoutMode: 'fitRows'
+  });
+  // filter functions
+  var filterFns = {
+    // show if number is greater than 50
+    numberGreaterThan50: function() {
+      var number = $(this).find('.number').text();
+      return parseInt( number, 10 ) > 50;
+    },
+    // show if name ends with -ium
+    ium: function() {
+      var name = $(this).find('.name').text();
+      return name.match( /ium$/ );
+    }
+  };
+  // bind filter button click
+  $('#filters').on( 'click', 'button', function() {
+    var filterValue = $( this ).attr('data-filter');
+    // use filterFn if matches value
+    filterValue = filterFns[ filterValue ] || filterValue;
+    $container.isotope({ filter: filterValue });
+  });
+  // change is-checked class on buttons
+  $('.button-group').each( function( i, buttonGroup ) {
+    var $buttonGroup = $( buttonGroup );
+    $buttonGroup.on( 'click', 'button', function() {
+      $buttonGroup.find('.is-checked').removeClass('is-checked');
+      $( this ).addClass('is-checked');
+    });
+  });
+  
+});
+</script>
+<script src="js/imagelightbox.min.js"></script>
+<script>
+  $( function()
+  {
+      // ACTIVITY INDICATOR
+    var activityIndicatorOn = function()
+      {
+        $( '<div id="imagelightbox-loading"><div></div></div>' ).appendTo( 'body' );
+      },
+      activityIndicatorOff = function()
+      {
+        $( '#imagelightbox-loading' ).remove();
+      },
+      // OVERLAY
+      overlayOn = function()
+      {
+        $( '<div id="imagelightbox-overlay"></div>' ).appendTo( 'body' );
+      },
+      overlayOff = function()
+      {
+        $( '#imagelightbox-overlay' ).remove();
+      },
+      // CLOSE BUTTON
+      closeButtonOn = function( instance )
+      {
+        $( '<button type="button" id="imagelightbox-close" title="Close"></button>' ).appendTo( 'body' ).on( 'click touchend', function(){ $( this ).remove(); instance.quitImageLightbox(); return false; });
+      },
+      closeButtonOff = function()
+      {
+        $( '#imagelightbox-close' ).remove();
+      },
+      // CAPTION
+      captionOn = function()
+      {
+        var description = $( 'a[href="' + $( '#imagelightbox' ).attr( 'src' ) + '"] img' ).attr( 'alt' );
+        if( description.length > 0 )
+          $( '<div id="imagelightbox-caption">' + description + '</div>' ).appendTo( 'body' );
+      },
+      captionOff = function()
+      {
+        $( '#imagelightbox-caption' ).remove();
+      },
+      // NAVIGATION
+      navigationOn = function( instance, selector )
+      {
+        var images = $( selector );
+        if( images.length )
+        {
+          var nav = $( '<div id="imagelightbox-nav"></div>' );
+          for( var i = 0; i < images.length; i++ )
+            nav.append( '<button type="button"></button>' );
+          nav.appendTo( 'body' );
+          nav.on( 'click touchend', function(){ return false; });
+          var navItems = nav.find( 'button' );
+          navItems.on( 'click touchend', function()
+          {
+            var $this = $( this );
+            if( images.eq( $this.index() ).attr( 'href' ) != $( '#imagelightbox' ).attr( 'src' ) )
+              instance.switchImageLightbox( $this.index() );
+            navItems.removeClass( 'active' );
+            navItems.eq( $this.index() ).addClass( 'active' );
+            return false;
+          })
+          .on( 'touchend', function(){ return false; });
+        }
+      },
+      navigationUpdate = function( selector )
+      {
+        var items = $( '#imagelightbox-nav button' );
+        items.removeClass( 'active' );
+        items.eq( $( selector ).filter( '[href="' + $( '#imagelightbox' ).attr( 'src' ) + '"]' ).index( selector ) ).addClass( 'active' );
+      },
+      navigationOff = function()
+      {
+        $( '#imagelightbox-nav' ).remove();
+      },
+      // ARROWS
+      arrowsOn = function( instance, selector )
+      {
+        var $arrows = $( '<button type="button" class="imagelightbox-arrow imagelightbox-arrow-left"></button><button type="button" class="imagelightbox-arrow imagelightbox-arrow-right"></button>' );
+        $arrows.appendTo( 'body' );
+        $arrows.on( 'click touchend', function( e )
+        {
+          e.preventDefault();
+          var $this = $( this ),
+            $target = $( selector + '[href="' + $( '#imagelightbox' ).attr( 'src' ) + '"]' ),
+            index = $target.index( selector );
+          if( $this.hasClass( 'imagelightbox-arrow-left' ) )
+          {
+            index = index - 1;
+            if( !$( selector ).eq( index ).length )
+              index = $( selector ).length;
+          }
+          else
+          {
+            index = index + 1;
+            if( !$( selector ).eq( index ).length )
+              index = 0;
+          }
+          instance.switchImageLightbox( index );
+          return false;
+        });
+      },
+      arrowsOff = function()
+      {
+        $( '.imagelightbox-arrow' ).remove();
+      };
+    //  WITH ACTIVITY INDICATION
+    $( 'a[data-imagelightbox="a"]' ).imageLightbox(
+    {
+      onLoadStart:  function() { activityIndicatorOn(); },
+      onLoadEnd:    function() { activityIndicatorOff(); },
+      onEnd:      function() { activityIndicatorOff(); }
+    });
+    //  WITH OVERLAY & ACTIVITY INDICATION
+    $( 'a[data-imagelightbox="b"]' ).imageLightbox(
+    {
+      onStart:   function() { overlayOn(); },
+      onEnd:     function() { overlayOff(); activityIndicatorOff(); },
+      onLoadStart: function() { activityIndicatorOn(); },
+      onLoadEnd:   function() { activityIndicatorOff(); }
+    });
+    //  WITH "CLOSE" BUTTON & ACTIVITY INDICATION
+    var instanceC = $( 'a[data-imagelightbox="c"]' ).imageLightbox(
+    {
+      quitOnDocClick: false,
+      onStart:    function() { closeButtonOn( instanceC ); },
+      onEnd:      function() { closeButtonOff(); activityIndicatorOff(); },
+      onLoadStart:  function() { activityIndicatorOn(); },
+      onLoadEnd:    function() { activityIndicatorOff(); }
+    });
+    //  WITH CAPTION & ACTIVITY INDICATION
+    $( 'a[data-imagelightbox="d"]' ).imageLightbox(
+    {
+      onLoadStart: function() { captionOff(); activityIndicatorOn(); },
+      onLoadEnd:   function() { captionOn(); activityIndicatorOff(); },
+      onEnd:     function() { captionOff(); activityIndicatorOff(); }
+    });
+    //  WITH ARROWS & ACTIVITY INDICATION
+    var selectorG = 'a[data-imagelightbox="g"]';
+    var instanceG = $( selectorG ).imageLightbox(
+    {
+      onStart:    function(){ arrowsOn( instanceG, selectorG ); },
+      onEnd:      function(){ arrowsOff(); activityIndicatorOff(); },
+      onLoadStart:  function(){ activityIndicatorOn(); },
+      onLoadEnd:    function(){ $( '.imagelightbox-arrow' ).css( 'display', 'block' ); activityIndicatorOff(); }
+    });
+    //  WITH NAVIGATION & ACTIVITY INDICATION
+    var selectorE = 'a[data-imagelightbox="e"]';
+    var instanceE = $( selectorE ).imageLightbox(
+    {
+      onStart:   function() { navigationOn( instanceE, selectorE ); },
+      onEnd:     function() { navigationOff(); activityIndicatorOff(); },
+      onLoadStart: function() { activityIndicatorOn(); },
+      onLoadEnd:   function() { navigationUpdate( selectorE ); activityIndicatorOff(); }
+    });
+    //  ALL COMBINED
+    var selectorF = 'a[data-imagelightbox="f"]';
+    var instanceF = $( selectorF ).imageLightbox(
+    {
+      onStart:    function() { overlayOn(); closeButtonOn( instanceF ); arrowsOn( instanceF, selectorF ); },
+      onEnd:      function() { overlayOff(); captionOff(); closeButtonOff(); arrowsOff(); activityIndicatorOff(); },
+      onLoadStart:  function() { captionOff(); activityIndicatorOn(); },
+      onLoadEnd:    function() { captionOn(); activityIndicatorOff(); $( '.imagelightbox-arrow' ).css( 'display', 'block' ); }
+    });
+  });
+$( selector ).imageLightbox(
+{
+    selector:       'id="imagelightbox"',   // string;
+    allowedTypes:   'png|jpg|jpeg|gif',     // string;
+    animationSpeed: 250,                    // integer;
+    preloadNext:    true,                   // bool;            silently preload the next image
+    enableKeyboard: true,                   // bool;            enable keyboard shortcuts (arrows Left/Right and Esc)
+    quitOnEnd:      true,                  // bool;            quit after viewing the last image
+    quitOnImgClick: true,                  // bool;            quit when the viewed image is clicked
+    quitOnDocClick: true,                   // bool;            quit when anything but the viewed image is clicked
+    onStart:        false,                  // function/bool;   calls function when the lightbox starts
+    onEnd:          false,                  // function/bool;   calls function when the lightbox quits
+    onLoadStart:    false,                  // function/bool;   calls function when the image load begins
+    onLoadEnd:      false                   // function/bool;   calls function when the image finishes loading
+});
+</script>
+<!-- because why not?-->
+
+ <script src="bower_components/classie/classie.js"></script>
+  
+    <script src="bower_components/eventie/eventie.js"></script>
+  
+    <script src="bower_components/doc-ready/doc-ready.js"></script>
+  
+    <script src="bower_components/get-style-property/get-style-property.js"></script>
+  
+    <script src="bower_components/get-size/get-size.js"></script>
+  
+    <script src="bower_components/eventEmitter/EventEmitter.js"></script>
+  
+    <script src="bower_components/imagesloaded/imagesloaded.js"></script>
+  
+    <script src="bower_components/matches-selector/matches-selector.js"></script>
+  
+    <script src="bower_components/outlayer/item.js"></script>
+  
+    <script src="bower_components/outlayer/outlayer.js"></script>
+  
+    <script src="bower_components/masonry/masonry.js"></script>
+  
+    <script src="bower_components/isotope/js/item.js"></script>
+  
+    <script src="bower_components/isotope/js/layout-mode.js"></script>
+  
+    <script src="bower_components/isotope/js/isotope.js"></script>
+  
+    <script src="bower_components/isotope/js/layout-modes/vertical.js"></script>
+  
+    <script src="bower_components/isotope/js/layout-modes/fit-rows.js"></script>
+  
+    <script src="bower_components/isotope/js/layout-modes/masonry.js"></script>
+  
+    <script src="bower_components/isotope-cells-by-column/cells-by-column.js"></script>
+  
+    <script src="bower_components/isotope-cells-by-row/cells-by-row.js"></script>
+  
+    <script src="bower_components/isotope-fit-columns/fit-columns.js"></script>
+  
+    <script src="bower_components/isotope-horizontal/horizontal.js"></script>
+  
+    <script src="bower_components/isotope-masonry-horizontal/masonry-horizontal.js"></script>
+  
+    <script src="bower_components/packery/js/rect.js"></script>
+  
+    <script src="bower_components/packery/js/packer.js"></script>
+  
+    <script src="bower_components/packery/js/item.js"></script>
+  
+    <script src="bower_components/packery/js/packery.js"></script>
+  
+    <script src="bower_components/isotope-packery/packery-mode.js"></script>
+  
+    <script src="bower_components/jquery-bridget/jquery.bridget.js"></script>
+  
+    <script src="js/highlight.pack.js"></script>
+  
+    <script src="js/controller.js"></script>
+  
+    <script src="js/appendix.js"></script>
+  
+    <script src="js/events.js"></script>
+  
+    <script src="js/filtering.js"></script>
+  
+    <script src="js/index.js"></script>
+  
+    <script src="js/layout-modes.js"></script>
+  
+    <script src="js/methods.js"></script>
+  
+    <script src="js/sorting.js"></script>
+  
+    <script src="js/vertical.js"></script>
+</body> 
+</html>

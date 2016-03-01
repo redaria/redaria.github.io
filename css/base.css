@@ -1,0 +1,662 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+@font-face { font-family: Miso; src: url('fonts/miso.otf'); }  
+body {
+	color: #444;
+	font-family: Georgia, serif;
+	line-height: 1.5em;
+}
+ol, ul {
+	list-style: square;
+	margin: 0 0 0.5em;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+.button{text-decoration:none; text-align:center; 
+ padding:12px 16px; 
+ border:none; 
+ -webkit-border-radius:4px;
+ -moz-border-radius:4px; 
+ border-radius: 4px; 
+ font-family: "Miso","Yanone Kaffeesatz", sans-serif; 
+ color:#75a798; 
+ background:#ffffff; 
+ -webkit-box-shadow:0px 0px 2px #bababa, inset 0px 0px 20px #ffffff; 
+ -moz-box-shadow: 0px 0px 2px #bababa,  inset 0px 0px 20px #ffffff;  
+ box-shadow:0px 0px 2px #bababa, inset 0px 0px 20px #ffffff;  
+  
+  }
+  .button:hover,
+   .button:active,
+   .button.is-checked{
+padding:12px 16px; 
+ border:none; 
+ -webkit-border-radius:4px;
+ -moz-border-radius:4px; 
+ border-radius: 4px; 
+ font-family: "Miso","Yanone Kaffeesatz", sans-serif;  
+ color:#ffffff; 
+ background:#8acfb7; 
+ -webkit-box-shadow:inset 0,0,0px 0,0,0px 20,0,4px #ffffff,#ffffff,#396354;  -moz-box-shadow:inset 0px 0px 4px #396354;  box-shadow:inset 0px 0px 4px #396354; 
+  
+ }
+
+strong,b {
+	font-weight: bold;
+}
+i {
+	font-style:italic;
+}
+p {
+	margin: 0 0 0.5em;
+	max-width: 634px;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Miso","Yanone Kaffeesatz", sans-serif;
+	font-weight: normal;
+	line-height: 0.8em;
+	padding: 0.5em 0 0.25em;
+}
+
+h1 {
+	font-size: 3em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+h4 {
+	font-size: 1.25em;
+}
+
+h5, h6 {
+	font-size: 1em;
+}
+
+a, a:link, a:visited {
+	color: #8acfb7;
+	text-decoration: none;
+}
+
+a:hover, a:active {
+	background: transparent;
+	color: #75a798;
+}
+
+img {
+	max-width: 100%;
+	vertical-align: middle;
+}
+#imagelightbox
+{
+    position: fixed;
+    z-index: 9999;
+ 
+    -ms-touch-action: none;
+    touch-action: none;
+    -webkit-box-shadow: 0px 0px 50em 100em rgba(0,0,0,0.85);
+	box-shadow: 0px 0px 50em 100em rgba(0,0,0,0.85);
+}
+/*activity indict*/
+#imagelightbox-loading,
+		#imagelightbox-loading div
+		{
+			border-radius: 50%;
+		}
+		#imagelightbox-loading
+		{
+			width: 2.5em; /* 40 */
+			height: 2.5em; /* 40 */
+			background-color: #444;
+			background-color: rgba( 0, 0, 0, .80 );
+			position: fixed;
+			z-index: 10003;
+			top: 50%;
+			left: 50%;
+			padding: 0.625em; /* 10 */
+			margin: -1.25em 0 0 -1.25em; /* 20 */
+
+			-webkit-box-shadow: 0 0 2.5em rgba( 0, 0, 0, .75 ); /* 40 */
+			box-shadow: 0 0 2.5em rgba( 0, 0, 0, .75 ); /* 40 */
+		}
+			#imagelightbox-loading div
+			{
+				width: 1.25em; /* 20 */
+				height: 1.25em; /* 20 */
+				background-color: #fff;
+
+				-webkit-animation: imagelightbox-loading .5s ease infinite;
+				animation: imagelightbox-loading .5s ease infinite;
+			}
+
+			@-webkit-keyframes imagelightbox-loading
+			{
+				from { opacity: .5;	-webkit-transform: scale( .75 ); }
+				50%	 { opacity: 1;	-webkit-transform: scale( 1 ); }
+				to	 { opacity: .5;	-webkit-transform: scale( .75 ); }
+			}
+			@keyframes imagelightbox-loading
+			{
+				from { opacity: .5;	transform: scale( .75 ); }
+				50%	 { opacity: 1;	transform: scale( 1 ); }
+				to	 { opacity: .5;	transform: scale( .75 ); }
+			}
+
+#imagelightbox-caption
+		{
+			text-align: center;
+			font-family: "Miso","Yanone Kaffeesatz", sans-serif;
+			color: #fff;
+			background-color: #75a798;
+			position: fixed;
+			z-index: 10001;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			padding: 0.2em; /* 10 */
+		}
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.img-rounded {
+  border-radius: 6px;
+}
+.img-thumbnail {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: all .2s ease-in-out;
+          transition: all .2s ease-in-out;
+}
+.img-circle {
+  border-radius: 50%;
+}
+
+hr {
+	border: none;
+	background:#75a798;
+	height: 1.5px;
+}
+
+
+.banner-wrap {
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:1;
+	width: 100%;
+	border-bottom: 5px solid #f5f5f5;
+	text-align: center;
+	background: #Fff;
+	padding-bottom:0em;
+}
+@media (max-width: 720px) {
+  .banner-wrap {
+	display:none;
+  }
+  .intro{
+  	position:fixed;
+	top:0;
+	left:0;
+	z-index:1;
+	width: 100%;
+	font-size: 1.75em;
+	font-family: "Miso","Yanone Kaffeesatz", sans-serif;
+	line-height: 0.3em;
+	max-width: none;
+	text-align:center;
+	border-bottom: 5px solid #f5f5f5;
+	padding:0.5em;
+	background-color:#FFF;
+  }
+  .intro img{
+	  margin-top:0;  
+	  top:0;
+	  right:0;
+  }
+  }
+.banner-wrap h3{
+	padding-top: 1em;
+}
+.banner-wrap img{
+	padding-top: 0.5em;
+}
+@media (min-width:721px) {
+.intro {
+	display:none;
+}
+}
+.grid {
+	padding: 0 20px;
+}
+
+.row {
+	margin-bottom: 1em;
+	
+}
+#indentTop {
+	margin-top: 3em;
+}
+.feature h1 h2 h3 h4{
+	font-weight: bold;
+	text-align: center;
+}
+.feature p {
+	padding-top:1em;
+	font-size: 0.85em;
+}
+
+.mod-download {
+	background: url(../images/bg_download.png) 0 0.75em no-repeat;
+	background-size: 100%;
+}
+
+.mod-download h2 {
+	color: #8acfb7;
+	font-weight: bold;
+}
+
+.mod-download .logo {
+	color: #fff;
+	font-size: 1em;
+}
+
+a.bttn {
+	border-right: 1px solid #0087a0;
+	border-bottom: 1px solid #0087a0;
+	background: #8acfb7;
+	color: #fff;
+	display: inline-block;
+	font-family: "Miso","Yanone Kaffeesatz", sans-serif;
+	font-size: 1.2em;
+	font-weight: bold;
+	margin: 0.5em 0;
+	padding: 0.5em 0.75em;
+}
+
+.mod-download .bttn:hover {
+	background: #0087a0;
+	cursor: pointer;
+}
+
+.example-grids {
+	margin-bottom: 4em;
+}
+
+.example-grids .row { margin-bottom: 0; }
+
+.example-grids .row p {
+	background: #ffc;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	font-family: Menlo, 'Panic Sans', monospace;
+	padding: 1em;
+	margin: 0 0 1em;
+}
+
+.portfolio_block {
+	width:100%;
+}
+.portfolio_block .project .hover_img {
+	position:relative;
+}
+	
+.portfolio_block.project_descr {
+	position:relative;
+	padding-top:1em;
+	color:#979797;
+	border:0;
+	border-bottom:2px solid #ededed;
+	transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+}
+.portfolio_block .project:hover .project_descr {border-bottom-color:#765692;}
+.portfolio_block .project_descr h4 {
+	margin-bottom:11px;
+	font-size:15px;
+}
+
+
+
+/* Portfolio Item Single */
+/*.prev_next_links {
+    display: block;
+    float: left;
+}*/
+/*.prev_next_links a {
+    margin: 0 17px 20px 0;
+}*/
+/* __________ Filter __________ */
+/*#filter {padding:11px 0 25px; text-align:center;}
+#filter li {display:inline-block;}
+#filter li a {
+	display:block;
+	padding:0 22px;
+	text-transform:capitalize;
+	line-height:20px;
+	font-size:15px;
+	color:#707070;
+}*/
+#filter li a.selected {
+	cursor:pointer;
+	background:#8acfb7;
+	color:#fff;
+	box-shadow: 0px 2px 0px 0px #75a798;
+}
+ #filter {
+	margin-bottom: 50px !important;
+	margin-left: -37px !important;
+	margin-top: 37px !important;
+	display: inline-block !important;
+}
+#filter  li{
+	margin-bottom: 30px !important;
+	margin-right: 10px !important;
+	border-radius:0!important;
+	background:none!important;
+	padding:0!important;
+	box-shadow: none!important;
+	padding-right: 0!important;
+	padding-left: 0!important;
+	padding-top:0!important;
+
+
+	float:left;
+	list-style:none;
+}
+#filter  li:last-child{
+	margin-right: 0;
+}
+#filter li a{
+	text-decoration:none;
+	text-transform:uppercase;
+	color:#fff;
+	font-size: 13px;
+	text-align:center;
+	font-family: 'Miso',"Yanone Kaffeesatz", sans-serif;
+	font-weight: 700;
+	
+	//margin-bottom: 15px;
+	//margin-right: 10px;
+	border-radius:4px;
+	
+	padding:10px;
+	background:#2f2f2f;
+	box-shadow: 0px 2px 0px 0px #000;
+	padding-right: 18px;
+	padding-left: 18px;
+	padding-top:11px;
+}
+#filter li a:hover{
+	cursor:pointer;
+	background:#8acfb7;
+	//color:#fff;
+	box-shadow: 0px 2px 0px 0px #75a798;
+}
+#filter .current{
+	background:#8acfb7;
+	box-shadow: 0px 2px 0px 0px #75a798;
+}
+/**/
+.pretty{
+	margin-top: 45px;
+}
+.pretty img{
+	border-radius:3px;
+}
+.pretty {
+	margin-top:0;
+}
+.isotope-item{
+	top: 38px !important;
+}
+
+.picsGall{
+	max-width: 100%; 
+	height: auto;
+}
+ .pretty .img-responsive{
+	transition-duration: 0.5s;
+ }
+
+.pretty .gall a:hover .img-responsive{
+	opacity:0.45;
+	transition-duration: 0.5s;
+}
+
+.pretty .plS{
+	display: block;
+}
+.view h3{
+	margin-bottom: 5px;
+	text-align:center;
+	//margin-left: -14px;
+	margin-top: 12px;
+}
+.view a{
+	text-decoration:none;
+	color:#2f2f2f;
+	font-size: 16px;
+	text-align:center;
+	font-family: 'Miso',"Yanone Kaffeesatz", sans-serif;
+	font-weight: 300;
+}
+.view li{
+	display:inline-block;
+	height:40px;
+	background:none;
+	text-decoration:none;
+	color:#a9a9a9;
+	font-size: 13px;
+	text-align:center;
+	font-family: 'Miso', "Yanone Kaffeesatz",sans-serif;
+	font-weight: 300;
+}
+.view a:hover{
+	color:#8acfb7;
+}
+.view ul{
+	display:block !important;
+	margin-top: 7px;
+	margin-bottom:25px;
+	text-align: center;
+	padding-left: 0;
+}
+.view ul i{
+	margin-right: 5px;
+	font-style:normal;
+	display:inline-block;
+	font-family: FontAwesome;
+	font-size:13px;
+	color:#a9a9a9;
+}
+.view ul li{
+	margin-right: 12px;
+	text-align:center;
+	display: inline-block;
+	background: none;
+	box-shadow: none;
+	list-style:none;
+}
+/*.view ul li:hover{
+	cursor:normal;
+	color:#a9a9a9;
+	background: none;
+	box-shadow: none;
+}*/
+#filter{
+	display: inline-block;
+	margin-top: 45px;
+}
+.view ul a:hover , .view ul a:hover i{
+	color:#fd5f5b;
+}
+.view ul a{
+	display:inline-block;
+	color:#a9a9a9;
+	font-size: 13px;
+	font-family: 'Miso', "Yanone Kaffeesatz", sans-serif;
+	font-weight: 300;
+}
+/* ---- item elements ---- */
+
+.element-item {
+  position: relative;
+  float: right;
+  width: 150px;
+  height: 150px;
+  margin: 5px;
+  padding: 5px;
+  background: #FFF;
+}
+
+.element-item > * {
+  margin: 0;
+  padding: 0;
+}
+
+/* varying sizes */
+.is-varying-sizes .element-item.width2 { width: 210px; }
+.is-varying-sizes .element-item.height2 { height: 210px; }
+.ui-group .button-group {
+  display: inline-block;
+  margin-right: 20px;
+}
+/* ---- button-group ---- */
+
+.button-group:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.button-group .button {
+	float:left;
+  	border-radius: 0;
+  	margin-right: 1px;
+}
+
+.button-group .button:first-child { border-radius: 0.5em 0 0 0.5em; }
+.button-group .button:last-child { border-radius: 0 0.5em 0.5em 0; }
+/* hide radio inputs */
+.button input[type="radio"] { display: none; }
+.demo .isotope,
+.demo.isotope {
+  background: transparent;
+}
+.isotope.horizontal {
+  height: 334px;
+}
+/* clearfix */
+.isotope:before,
+.isotope:after {
+  content: " ";
+  display: table;
+}
+
+.isotope:after {
+  clear: both;
+}
+.isotope.counting {
+  counter-reset: item;
+}
+
+.isotope.counting .mini-item:before,
+.isotope.counting .item:before {
+  counter-increment: item;
+  content: counter(item);
+  display: block;
+  color: #555;
+  padding-top: 0.2em;
+  text-align: center;
+  font-size: 18px;
+}
+.isotope.animate-item-size-demo .item,
+.isotope.animate-item-size-demo .item-content {
+  width: 60px;
+  height: 60px;
+}
+
+.isotope.animate-item-size-demo .item {
+  border: none;
+  background: transparent;
+}
+.filtering-page #site-nav .nav-filtering a,
+.sorting-page #site-nav .nav-sorting a,
+.options-page #site-nav .nav-options a,
+.methods-page #site-nav .nav-methods a,
+.events-page #site-nav .nav-events a,
+.draggable-page #site-nav .nav-draggable a,
+.license-page #site-nav .nav-license a,
+.appendix-page #site-nav .nav-appendix a,
+.faq-page #site-nav .nav-faq a {
+  color: #4Bf;
+  background: #161615;
+}
+.footer {
+	margin-bottom: 0;
+	padding-bottom: 0.75em;
+	color: #666;
+}
+.footer p {
+	color: #666;
+	text-align: center;
+	max-width: none;
+}
+.footer h5 {
+	text-align: right;
+	padding-right: 2em;
+}
+.footer h2 h4{
+	padding-left: 1em;
+}
